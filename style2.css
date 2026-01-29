@@ -1,3 +1,9 @@
-all{
-  font-style:
+@font-face {
+    font-family: 'police_minecraft';
+    src: url('Minecraft.ttf') format('ttf'),
+    
+}
+
+body {
+    font-family: 'police_minecraft', sans-serif;
 }
