@@ -1,6 +1,6 @@
 body {
-    background-image: url("image_wither.png");
-    background-attachment:fixed;
+    background: url("image_wither.png");
+    
 }
 body {
     font-family: Arial, sans-serif;
