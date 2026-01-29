@@ -1,9 +1,11 @@
 body {
+    background-image: url("image_fond_ecrant_site.jpg");
+    background-attachment:fixed;
+}
+body {
     font-family: Arial, sans-serif;
     
     color: #333;
     font-size: 36 px
-    background-image: url("image_fond_ecrant_site.jpg");
-    background-attachment:fixed;
-    
+   
 }
