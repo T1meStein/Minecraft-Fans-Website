@@ -1,10 +1,10 @@
 body {
-    background: url("image_wither.png");
+    background: url("Ferme_Minecraft.jpg");
     background-repeat: no-repeat;
     background-attachment:fixed;
     background-size : cover ;
     font-family: Arial, sans-serif;
-    color: #333;
+    color: black;
     font-size: 36 px;
     opacity:100%;
 }
