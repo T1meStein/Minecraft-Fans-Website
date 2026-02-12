@@ -1,8 +1,8 @@
 body {
     background: url("image_wither.png");
-    background-repeat: false;
+    background-repeat: no-repeat;
     background-attachment:fixed;
-    background-size: 100% 
+    background-size: cover 
     
 }
 body {
