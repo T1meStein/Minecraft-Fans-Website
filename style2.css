@@ -2,13 +2,9 @@ body {
     background: url("image_wither.png");
     background-repeat: no-repeat;
     background-attachment:fixed;
-    background-size: cover 
-    
-}
-body {
+    background-size : cover ;
     font-family: Arial, sans-serif;
-    
     color: #333;
-    font-size: 36 px
-    opacity:1
+    font-size: 36 px;
+    opacity:1;
 }
