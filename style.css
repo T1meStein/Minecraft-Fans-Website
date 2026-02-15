@@ -1,12 +1,37 @@
-h1{
-  text-align: center
+.hero {
+  background-image: url("background.jpg");
+  background-size: cover;
+  background-position: relative;
+  background-repeat: no-repeat;
+  background-attachment:fixed;
+  position: relative;
+  padding: 50px;
+  color: white;
 }
 
-h2{
-  text-align: center
+
+.hero h1,
+.hero p {
+  position: relative;
+  z-index: 2;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
 }
 
-.sous-titre{
-  font-size: 25px ;
-  font-weight: bold
+
+.hero h1 {
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 8px 12px;
+  border-radius: 5px;
+}
+
+.hero p {
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 6px 10px;
+  border-radius: 4px;
+}
+h1 {
+    font-family: 'Press Start 2P', cursive;
+}
+p {
+    font-family: 'Poppins', sans-serif;
 }
