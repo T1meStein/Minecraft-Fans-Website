@@ -1,10 +1,31 @@
-body {
-    background: url("background.jpg");
-    background-repeat: no-repeat;
-    background-attachment:fixed;
-    background-size : cover ;
-    font-family: Arial, sans-serif;
-    color: black;
-    font-size: 36 px;
-    opacity:100%;
+.hero {
+  background-image: url("background.jpg");
+  background-size: cover;
+  background-position: relative;
+  background-repeat: no-repeat;
+  background-attachment:fixed;
+  position: relative; /* important pour le z-index */
+  padding: 50px;
+  color: white; /* texte blanc par défaut */
+}
+
+/* Faire ressortir le texte */
+.hero h1,
+.hero p {
+  position: relative;
+  z-index: 2; /* texte devant l’image */
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.4); /* ombre pour lisibilité */
+}
+
+/* Ajouter un fond derrière le texte pour le rendre encore plus lisible */
+.hero h1 {
+  background-color: rgba(0, 0, 0, 0.4); /* semi-transparent */
+  padding: 8px 12px;
+  border-radius: 5px;
+}
+
+.hero p {
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 6px 10px;
+  border-radius: 4px;
 }
