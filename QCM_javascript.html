@@ -1,1 +1,180 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>QCM SUR MINECRAFT</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background: linear-gradient(180deg, #0f2027, #203a43, #2c5364);
+    color:white;
+    padding:30px;
+}
+
+h1{
+    text-align:center;
+    font-size:40px;
+    text-shadow:3px 3px 6px black;
+}
+
+.question{
+    background:#1e1e1e;
+    border-left:6px solid #4CAF50;
+    padding:15px;
+    margin-bottom:15px;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.5);
+}
+
+button{
+    margin-top:10px;
+    padding:8px 15px;
+    border:none;
+    border-radius:20px;
+    background:#4CAF50;
+    color:white;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#2e7d32;
+    transform:scale(1.05);
+}
+
+select,input{
+    margin-top:5px;
+    padding:5px;
+    border-radius:5px;
+    border:none;
+}
+
+.correct{color:lightgreen;}
+.wrong{color:#ff4d4d;}
+
+#finalScore{
+    text-align:center;
+    font-size:28px;
+    margin-top:30px;
+}
+</style>
+</head>
+<body>
+
+<h1>QCM SUR MINECRAFT</h1>
+
+<div id="quiz"></div>
+
+<div style="text-align:center;">
+    <button onclick="afficherScore()">Terminer le QCM</button>
+</div>
+
+<div id="finalScore"></div>
+
+<script>
+
+let bonnesReponses = 0;
+
+const questions = [
+{type:"vf", q:"Minecraft est un jeu open world", r:"vrai"},
+{type:"vf", q:"Minecraft possede 2 versions du jeux", r:"vrai"},
+{type:"vf", q:"Le jeu premet au joueur de participer au mise a jour", r:"vrai"},
+{type:"vf", q:"???", r:"???"},
+{type:"vf", q:"???", r:"???"},
+{type:"vf", q:"???", r:"???"},
+{type:"vf", q:"???", r:"???"},
+{type:"vf", q:"???", r:"???"},
+{type:"vf", q:"???", r:"???"},
+{type:"vf", q:"???", r:"???"},
+
+{type:"select", q:"???", options:["???","???","???"], r:"???"},
+{type:"select", q:"???", options:["???","???","???"], r:"???"},
+{type:"select", q:"???", options:["???","???","???"], r:"???"},
+{type:"select", q:"???", options:["???","???","???"], r:"???"},
+{type:"select", q:"???", options:["???","???","???"], r:"???"},
+{type:"select", q:"???", options:["???","???","???"], r:"???"},
+{type:"select", q:"???", options:["???","???","???"], r:"???"},
+{type:"select", q:"???", options:["???","???","???"], r:"src"},
+{type:"select", q:"???", options:["???","???","???"], r:"???"},
+{type:"select", q:"???", options:["???","???","???"], r:"???"},
+
+{type:"text", q:"???", r:"???"},
+{type:"text", q:"???", r:"???"},
+{type:"text", q:"???", r:"???"},
+{type:"text", q:"???", r:"???"},
+{type:"text", q:"???", r:"???"}
+];
+
+const quiz = document.getElementById("quiz");
+
+questions.forEach((item,index)=>{
+    let div = document.createElement("div");
+    div.className="question";
+    div.innerHTML="<p>"+(index+1)+") "+item.q+"</p>";
+
+    if(item.type==="vf"){
+        div.innerHTML+=`
+        <label><input type="radio" name="q${index}" value="vrai"> Vrai</label>
+        <label><input type="radio" name="q${index}" value="faux"> Faux</label>`;
+    }
+
+    if(item.type==="select"){
+        let select=`<select id="q${index}">
+        <option value="">--Choisir--</option>`;
+        item.options.forEach(opt=>{
+            select+=`<option value="${opt}">${opt}</option>`;
+        });
+        select+="</select>";
+        div.innerHTML+=select;
+    }
+
+    if(item.type==="text"){
+        div.innerHTML+=`<input type="text" id="q${index}">`;
+    }
+
+    div.innerHTML+=`<div id="corr${index}"></div>`;
+    quiz.appendChild(div);
+});
+
+function afficherScore(){
+
+    bonnesReponses = 0;
+
+    questions.forEach((item,index)=>{
+        let bonne=false;
+
+        if(item.type==="vf"){
+            const choix=document.querySelector(`input[name="q${index}"]:checked`);
+            if(choix && choix.value===item.r) bonne=true;
+        }
+
+        if(item.type==="select"){
+            const val=document.getElementById("q"+index).value;
+            if(val===item.r) bonne=true;
+        }
+
+        if(item.type==="text"){
+            const val=document.getElementById("q"+index).value.toLowerCase().trim();
+            if(val===item.r) bonne=true;
+        }
+
+        const corr=document.getElementById("corr"+index);
+
+        if(bonne){
+            bonnesReponses++;
+            corr.innerHTML="<span class='correct'>✔ Bonne réponse</span>";
+        } else {
+            corr.innerHTML="<span class='wrong'>✖ Mauvaise réponse (bonne réponse : "+item.r+")</span>";
+        }
+    });
+
+    document.getElementById("finalScore").innerHTML=
+        "🏆 Score final : "+bonnesReponses+" / 25";
+}
+
+</script>
+
+</body>
+</html>
 
