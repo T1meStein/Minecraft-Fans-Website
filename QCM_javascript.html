@@ -81,14 +81,19 @@ select,input{
 <div id="quiz"></div>
 
 <div style="text-align:center;">
-    <button onclick="afficherScore()">Terminer le QCM</button>
+    <button id="btn-valider" onclick="afficherScore()">Terminer le QCM</button>
 </div>
-
+<div style="text-align:center;">
+    <button id="btn-valider" onclick="recomencer()">Recomencer</button>
+</div>
 <div id="finalScore"></div>
 
 <script>
 
 let bonnesReponses = 0;
+
+document.getElementById("btn-valider").addEventListener("click",afficherScore);
+
 
 const questions = [
 {type:"vf", q:"Minecraft est un jeu open world", r:"vrai"},
@@ -109,7 +114,7 @@ const questions = [
 {type:"select", q:"???", options:["???","???","???"], r:"???"},
 {type:"select", q:"???", options:["???","???","???"], r:"???"},
 {type:"select", q:"???", options:["???","???","???"], r:"???"},
-{type:"select", q:"???", options:["???","???","???"], r:"src"},
+{type:"select", q:"???", options:["???","???","???"], r:"???"},
 {type:"select", q:"???", options:["???","???","???"], r:"???"},
 {type:"select", q:"???", options:["???","???","???"], r:"???"},
 
@@ -144,7 +149,7 @@ questions.forEach((item,index)=>{
     }
 
     if(item.type==="text"){
-        div.innerHTML+=`<input type="text" id="q${index}">`;
+      div.innerHTML+=`<input type="text" id="q${index}">`;
     }
 
     div.innerHTML+=`<div id="corr${index}"></div>`;
@@ -185,10 +190,19 @@ function afficherScore(){
 
     document.getElementById("finalScore").innerHTML=
         "🏆 Score final : "+bonnesReponses+" / 25";
-}
 
+  document.getElementById("btn-valider").disabled = true;
+}
+function recomencer() {
+  let bonnesReponses = 0;
+  document.getElementById("finalScore").innerHTML=
+        "🏆 Score final : "+bonnesReponses+" / 25";
+  document.getElementById("btn-valider").disabled = false;
+  
+  
+  
+}
 </script>
 
 </body>
 </html>
-
