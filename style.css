@@ -80,3 +80,22 @@ img {
   font-size: 25px ;
   font-weight: bold
   
+/* Lien normal (non visité) */
+a:link {
+  color: blue;
+}
+
+/* Lien déjà visité */
+a:visited {
+  color: cyan;
+}
+
+/* Au survol */
+a:hover {
+  color: red;
+}
+
+/* Lors du clic */
+a:active {
+  color: orange;
+}
