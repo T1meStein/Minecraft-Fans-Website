@@ -35,11 +35,14 @@
 }
 
 .sommaire ul,
-.sommaire ol,
-.sommaire p{
+.sommaire ol,{
   background: none; /* évite les doubles fonds */
 }
 
+.sommaire p {
+  background: none;
+  padding: 0;
+}
 .hero p {
   background-color: rgba(0, 0, 0, 0.4);
   padding: 6px 10px;
