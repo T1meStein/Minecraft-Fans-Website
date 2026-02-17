@@ -23,19 +23,19 @@
   padding: 8px 12px;
   border-radius: 5px;
 }
-.hero ol {
+.sommaire {
   background-color: rgba(0, 0, 0, 0.4);
   padding: 8px 12px;
   border-radius: 5px;
 }
-.hero ul {
+.boss ul {
   background-color: rgba(0, 0, 0, 0.4);
   padding: 8px 12px;
   border-radius: 5px;
 }
 
-.hero ol,
-.hero ul {
+.sommaire ul,
+.sommaire ol {
   background: none; /* évite les doubles fonds */
 }
 
