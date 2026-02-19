@@ -58,14 +58,28 @@ select,input{
     font-size:28px;
     margin-top:30px;
 }
-.txt{
-    color:red;
+
+a:link {
+  color: coral;
 }
-.txt1{
-    color:red;
+
+/* Lien déjà visité */
+a:visited {
+  color: cyan;
 }
-.txt2{
-    color:red;
+
+/* Au survol */
+a:hover {
+  color: red;
+}
+
+/* Lors du clic */
+a:active {
+  color: orange;
+}
+
+a {
+  display: inline-block;  /* empêche l’espace après le mot d’être cliquable */
 }
 </style>
 </head>
