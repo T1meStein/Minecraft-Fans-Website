@@ -84,7 +84,7 @@ img {
   
 /* Lien normal (non visité) */
 a:link {
-  color: lime;
+  color: coral;
 }
 
 /* Lien déjà visité */
