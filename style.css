@@ -112,7 +112,9 @@ a {
 .menu-container {
     display: flex;
     gap: 30px; /* espace entre les boutons */
-  }
+    justify-content: center; /* centre horizontalement */
+    align-items: center; /* centre verticalement si besoin */
+}
 
   /* Bouton en tant que lien */
   .menu-button {
