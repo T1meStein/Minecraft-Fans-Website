@@ -79,7 +79,9 @@ a:active {
 .menu-container {
     display: flex;
     gap: 30px; /* espace entre les boutons */
-  }
+    justify-content: center; /* centre horizontalement */
+    align-items: center; /* centre verticalement si besoin */
+}
 
   /* Bouton en tant que lien */
   .menu-button {
@@ -106,6 +108,7 @@ a:active {
     color: #333;
     margin-bottom: 10px;
     text-align: center;
+    font-family: 'Press Start 2P', cursive;
   }
 
   /* Image du bouton */
